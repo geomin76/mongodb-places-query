@@ -15,8 +15,7 @@ def main():
 @app.route("/query", methods=['GET', 'POST'])
 @cross_origin(origin='*')
 def query():    
-    # cluster0.wrh6y.azure.mongodb.net
-    url = "mongodb+srv://{0}:{1}@{2}/{3}?retryWrites=true&w=majority".format(os.envion['USER'], os.envion['PASS'], os.envion['URL'], os.envion['DB'])
+    url = "mongodb+srv://{0}:{1}@{2}/{3}?retryWrites=true&w=majority".format(os.environ['USER'], os.environ['PASS'], os.environ['URL'], os.environ['DB'])
     client = MongoClient(url)
     db = client.places
     collection = db.places
