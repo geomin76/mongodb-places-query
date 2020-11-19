@@ -13,7 +13,7 @@ def main():
     return "Hello World"
 
 @app.route("/query", methods=['GET', 'POST'])
-@cross_origin(origin='*')
+@cross_origin()
 def query():
     url = "mongodb+srv://{0}:{1}@{2}/{3}?retryWrites=true&w=majority".format(os.environ['USER'], os.environ['PASS'], os.environ['URL'], os.environ['DB'])
     client = MongoClient(url)
