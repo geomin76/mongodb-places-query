@@ -1,0 +1,11 @@
+language: python
+python:
+- '3.6'
+branches:
+  only:
+  - main
+install:
+- pip install -r requirements.txt
+script:
+- python -m unittest
+- zappa deploy dev
